@@ -3,7 +3,6 @@ package com.tictactoe.multiplayer.game;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import static com.tictactoe.multiplayer.game.GameManager.BLOCK_LENGTH;
@@ -17,7 +16,7 @@ public class GameActivity extends BaseGameActivity implements GameManager.GameLi
 
     GameManager gameManager;
     Button restartButton;
-    TextView topTextView;
+    Button topTextButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +28,7 @@ public class GameActivity extends BaseGameActivity implements GameManager.GameLi
     }
 
     private void initViews() {
-        topTextView = findViewById(R.id.tv_top_title);
+        topTextButton = findViewById(R.id.tv_top_title);
         restartButton = findViewById(R.id.btn_restart);
         restartButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +56,7 @@ public class GameActivity extends BaseGameActivity implements GameManager.GameLi
             int id = getIntIdFromString(buttonIds[i]);
             final Button blockButton = findViewById(id);
             blockButton.setOnClickListener(blockClickListener);
+            animateButton(blockButton);
         }
     }
 
@@ -65,6 +65,7 @@ public class GameActivity extends BaseGameActivity implements GameManager.GameLi
             int id = getIntIdFromString(buttonIds[i]);
             final Button blockButton = findViewById(id);
             blockButton.setText("");
+            animateButton(blockButton);
         }
     }
 
@@ -81,9 +82,9 @@ public class GameActivity extends BaseGameActivity implements GameManager.GameLi
     @Override
     public void onTurnChange(String turn) {
         if(turn.equalsIgnoreCase(gameManager.GAME_OVER)) {
-            topTextView.setText(getString(R.string.game_over));
+            topTextButton.setText(getString(R.string.game_over));
         } else {
-            topTextView.setText(turn + getString(R.string.turn_string));
+            topTextButton.setText(turn + getString(R.string.turn_string));
         }
     }
 }

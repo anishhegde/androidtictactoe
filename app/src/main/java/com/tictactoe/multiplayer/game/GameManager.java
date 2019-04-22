@@ -69,7 +69,7 @@ public class GameManager {
     }
 
     public void onBlockClick(Context context, View view) {
-        if (stateManager.getState() == StateManager.State.PLAY) {
+        if (stateManager.getState() == StateManager.State.PLAY && getBoardValue(context, view) == 0) {
             setBlockValue(view);
             setBoardValue(context, view);
             blockCounter++;
@@ -101,6 +101,15 @@ public class GameManager {
             stateManager.end();
             gameListener.onTurnChange(GAME_OVER);
         }
+    }
+
+    private int getBoardValue(Context context, View view) {
+        String viewName = context.getResources().getResourceEntryName(view.getId());
+        // Get the last two numbers
+        String substring = viewName.substring(Math.max(viewName.length() - 2, 0));
+        int i = Character.getNumericValue(substring.charAt(0));
+        int j = Character.getNumericValue(substring.charAt(1));
+        return gameBoard[i][j];
     }
 
     private void setBlockValue(View view) {
