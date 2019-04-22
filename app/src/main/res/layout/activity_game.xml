@@ -6,7 +6,7 @@
     android:background="@color/slate"
     android:orientation="vertical"
     android:weightSum="@integer/main_layout_weights"
-    tools:context=".GameActivity">
+    tools:context=".GameView.GameActivity">
 
     <Button
         android:id="@+id/tv_top_title"

@@ -1,11 +1,17 @@
-package com.tictactoe.multiplayer.game;
+package com.tictactoe.multiplayer.game.GameView;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.v4.content.res.ResourcesCompat;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.TextView;
 
-import static com.tictactoe.multiplayer.game.GameManager.BLOCK_LENGTH;
+import com.tictactoe.multiplayer.game.R;
+import com.tictactoe.multiplayer.game.GameEngine.GameManager;
+
+import static com.tictactoe.multiplayer.game.GameEngine.GameManager.BLOCK_LENGTH;
 
 public class GameActivity extends BaseGameActivity implements GameManager.GameListener {
 
@@ -71,12 +77,12 @@ public class GameActivity extends BaseGameActivity implements GameManager.GameLi
 
     @Override
     public void onAllBlocksPlayed() {
-        Toast.makeText(this, getString(R.string.end), Toast.LENGTH_SHORT).show();
+        showWinnerDialog(getString(R.string.end));
     }
 
     @Override
     public void onGameEvent(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+        showWinnerDialog(message);
     }
 
     @Override
@@ -86,5 +92,13 @@ public class GameActivity extends BaseGameActivity implements GameManager.GameLi
         } else {
             topTextButton.setText(turn + getString(R.string.turn_string));
         }
+    }
+
+    private void showWinnerDialog(String message) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.MyDialogTheme);
+        builder.setMessage(message)
+                .setTitle(R.string.game_over);
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }

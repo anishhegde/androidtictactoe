@@ -1,4 +1,4 @@
-package com.tictactoe.multiplayer.game;
+package com.tictactoe.multiplayer.game.GameEngine;
 
 public class StateManager {
 

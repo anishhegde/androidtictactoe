@@ -1,11 +1,13 @@
-package com.tictactoe.multiplayer.game;
+package com.tictactoe.multiplayer.game.GameEngine;
 
 import android.content.Context;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import static com.tictactoe.multiplayer.game.StateManager.X_VALUE;
+import com.tictactoe.multiplayer.game.R;
+
+import static com.tictactoe.multiplayer.game.GameEngine.StateManager.X_VALUE;
 
 public class GameManager {
 
@@ -97,7 +99,7 @@ public class GameManager {
         int j = Character.getNumericValue(substring.charAt(1));
         setGameBoard(stateManager.getStateValue(), i, j);
         if (checkWinningCondition(stateManager.getStateValue(), i, j)) {
-            gameListener.onGameEvent(stateManager.getStateValue() + " win");
+            gameListener.onGameEvent(stateManager.getStateValue() + context.getString(R.string.wins_the_game));
             stateManager.end();
             gameListener.onTurnChange(GAME_OVER);
         }

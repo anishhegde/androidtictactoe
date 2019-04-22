@@ -13,4 +13,14 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="MyDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">@color/dialog_color</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:fontFamily">@font/permanment_marker</item>
+        <item name="android:textAppearanceSmall">@style/MessageTextAppearance</item>
+    </style>
+
+    <style name="MessageTextAppearance" parent="@android:style/TextAppearance.Small">
+        <item name="android:fontFamily">@font/permanment_marker</item>
+    </style>
 </resources>

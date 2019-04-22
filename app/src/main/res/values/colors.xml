@@ -7,4 +7,8 @@
     <color name="hotpink">#f652a0</color>
     <color name="cyan">#36eee0</color>
     <color name="slateDark">#353a4e</color>
+    <color name="splash_start">#080709</color>
+    <color name="splash_end">#080709</color>
+    <color name="dialog_color">#eee</color>
+    <color name="white">#FFFFFF</color>
 </resources>

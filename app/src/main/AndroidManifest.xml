@@ -9,7 +9,12 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".GameActivity">
+        <activity
+            android:name=".GameView.GameActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".Splash.SplashActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

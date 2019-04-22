@@ -4,5 +4,8 @@
     <string name="restart">Restart</string>
     <string name="game_over">Game Over</string>
     <string name="turn_string">\'s Turn\</string>
-    <string name="end">end</string>
+    <string name="end">Tap restart to play again</string>
+    <string name="tic_splash">Tic Tac Toe</string>
+    <string name="game_over_message">Wohoo! Congratulations.</string>
+    <string name="wins_the_game">\t wins the game!!</string>
 </resources>
