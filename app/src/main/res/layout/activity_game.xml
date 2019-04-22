@@ -3,16 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/slate"
     android:orientation="vertical"
     android:weightSum="@integer/main_layout_weights"
     tools:context=".GameActivity">
 
     <TextView
+        android:id="@+id/tv_top_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_bottom_title"
         android:layout_weight="@integer/top_text_weight"
+        android:background="@color/cyan"
+        android:textSize="@dimen/title_font_size"
+        android:fontFamily="@font/permanment_marker"
         android:gravity="center"
-        android:text="@string/default_title" />
+        android:text="@string/default_title"
+        android:textColor="@android:color/white" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,19 +39,34 @@
                 android:id="@+id/block_00"
                 android:layout_width="@dimen/block_width"
                 android:layout_height="match_parent"
-                android:layout_weight="@integer/block_layout_weight" />
+                android:layout_margin="@dimen/block_margin"
+                android:layout_weight="@integer/block_layout_weight"
+                android:background="@color/slateDark"
+                android:fontFamily="@font/permanment_marker"
+                android:textColor="@android:color/white"
+                android:textSize="80sp" />
 
             <Button
                 android:id="@+id/block_01"
                 android:layout_width="@dimen/block_width"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_margin="@dimen/block_margin"
+                android:layout_weight="1"
+                android:background="@color/slateDark"
+                android:fontFamily="@font/permanment_marker"
+                android:textColor="@android:color/white"
+                android:textSize="80sp" />
 
             <Button
                 android:id="@+id/block_02"
                 android:layout_width="@dimen/block_width"
                 android:layout_height="match_parent"
-                android:layout_weight="@integer/block_layout_weight" />
+                android:layout_margin="@dimen/block_margin"
+                android:layout_weight="@integer/block_layout_weight"
+                android:background="@color/slateDark"
+                android:fontFamily="@font/permanment_marker"
+                android:textColor="@android:color/white"
+                android:textSize="80sp" />
 
         </LinearLayout>
 
@@ -59,19 +81,34 @@
                 android:id="@+id/block_10"
                 android:layout_width="@dimen/block_width"
                 android:layout_height="match_parent"
-                android:layout_weight="@integer/block_layout_weight" />
+                android:layout_margin="@dimen/block_margin"
+                android:layout_weight="@integer/block_layout_weight"
+                android:background="@color/slateDark"
+                android:fontFamily="@font/permanment_marker"
+                android:textColor="@android:color/white"
+                android:textSize="80sp" />
 
             <Button
                 android:id="@+id/block_11"
                 android:layout_width="@dimen/block_width"
                 android:layout_height="match_parent"
-                android:layout_weight="@integer/block_layout_weight" />
+                android:layout_margin="@dimen/block_margin"
+                android:layout_weight="@integer/block_layout_weight"
+                android:background="@color/slateDark"
+                android:fontFamily="@font/permanment_marker"
+                android:textColor="@android:color/white"
+                android:textSize="80sp" />
 
             <Button
                 android:id="@+id/block_12"
                 android:layout_width="@dimen/block_width"
                 android:layout_height="match_parent"
-                android:layout_weight="@integer/block_layout_weight" />
+                android:layout_margin="@dimen/block_margin"
+                android:layout_weight="@integer/block_layout_weight"
+                android:background="@color/slateDark"
+                android:fontFamily="@font/permanment_marker"
+                android:textColor="@android:color/white"
+                android:textSize="80sp" />
 
         </LinearLayout>
 
@@ -86,19 +123,34 @@
                 android:id="@+id/block_20"
                 android:layout_width="@dimen/block_width"
                 android:layout_height="match_parent"
-                android:layout_weight="@integer/block_layout_weight" />
+                android:layout_margin="@dimen/block_margin"
+                android:layout_weight="@integer/block_layout_weight"
+                android:background="@color/slateDark"
+                android:fontFamily="@font/permanment_marker"
+                android:textColor="@android:color/white"
+                android:textSize="80sp" />
 
             <Button
                 android:id="@+id/block_21"
                 android:layout_width="@dimen/block_width"
                 android:layout_height="match_parent"
-                android:layout_weight="@integer/block_layout_weight" />
+                android:layout_margin="@dimen/block_margin"
+                android:layout_weight="@integer/block_layout_weight"
+                android:background="@color/slateDark"
+                android:fontFamily="@font/permanment_marker"
+                android:textColor="@android:color/white"
+                android:textSize="80sp" />
 
             <Button
                 android:id="@+id/block_22"
                 android:layout_width="@dimen/block_width"
                 android:layout_height="match_parent"
-                android:layout_weight="@integer/block_layout_weight" />
+                android:layout_margin="@dimen/block_margin"
+                android:layout_weight="@integer/block_layout_weight"
+                android:background="@color/slateDark"
+                android:fontFamily="@font/permanment_marker"
+                android:textColor="@android:color/white"
+                android:textSize="80sp" />
 
         </LinearLayout>
 
@@ -109,6 +161,11 @@
         android:id="@+id/btn_restart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_restart_btn"
+        android:layout_weight="@integer/bottom_text_layout_weight"
+        android:background="@color/hotpink"
+        android:fontFamily="@font/permanment_marker"
         android:text="@string/restart"
-        android:layout_weight="@integer/bottom_text_layout_weight" />
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/restart_font_size" />
 </LinearLayout>

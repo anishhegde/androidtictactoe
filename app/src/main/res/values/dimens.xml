@@ -3,4 +3,9 @@
 
     <dimen name="row_height">0dp</dimen>
     <dimen name="block_width">0dp</dimen>
+    <dimen name="block_margin">5dp</dimen>
+    <dimen name="restart_font_size">18sp</dimen>
+    <dimen name="margin_top_restart_btn">10dp</dimen>
+    <dimen name="margin_bottom_title">10dp</dimen>
+    <dimen name="title_font_size">18sp</dimen>
 </resources>

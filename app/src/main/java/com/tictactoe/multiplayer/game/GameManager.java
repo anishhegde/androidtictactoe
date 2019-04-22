@@ -11,13 +11,17 @@ public class GameManager {
 
     public interface GameListener {
         void onAllBlocksPlayed();
+
         void onGameEvent(String message);
+
+        void onTurnChange(String turn);
     }
 
     private static final int ROW_LENGTH = 3;
     private static final int COL_LENGTH = 3;
     public static final int BLOCK_LENGTH = 9;
     private final String LOG_ID_BLOCK = "block";
+    public final String GAME_OVER = "Game Over";
     private GameListener gameListener;
     private int blockCounter = 0;
 
@@ -49,6 +53,7 @@ public class GameManager {
         gameListener = listener;
         initStateManager();
         initGameBoard();
+        gameListener.onTurnChange(stateManager.getStateValue());
     }
 
     public void initGameBoard() {
@@ -64,18 +69,22 @@ public class GameManager {
     }
 
     public void onBlockClick(Context context, View view) {
-        if(stateManager.getState() == StateManager.State.PLAY) {
+        if (stateManager.getState() == StateManager.State.PLAY) {
             setBlockValue(view);
             setBoardValue(context, view);
-            stateManager.next();
             blockCounter++;
-            checkBoardComplete();
+            if(stateManager.getState() != StateManager.State.END){
+                stateManager.next();
+                gameListener.onTurnChange(stateManager.getStateValue());
+                checkBoardComplete();
+            }
         }
     }
 
     private void checkBoardComplete() {
-        if(blockCounter >= BLOCK_LENGTH) {
+        if (blockCounter >= BLOCK_LENGTH) {
             stateManager.end();
+            gameListener.onTurnChange(GAME_OVER);
             gameListener.onAllBlocksPlayed();
         }
     }
@@ -88,8 +97,9 @@ public class GameManager {
         int j = Character.getNumericValue(substring.charAt(1));
         setGameBoard(stateManager.getStateValue(), i, j);
         if (checkWinningCondition(stateManager.getStateValue(), i, j)) {
-            gameListener.onGameEvent(stateManager.getStateValue()+ " win");
+            gameListener.onGameEvent(stateManager.getStateValue() + " win");
             stateManager.end();
+            gameListener.onTurnChange(GAME_OVER);
         }
     }
 
@@ -153,6 +163,7 @@ public class GameManager {
         blockCounter = 0;
         initGameBoard();
         stateManager.play();
+        gameListener.onTurnChange(stateManager.getStateValue());
     }
 
     private void setGameBoard(String value, int row, int column) {

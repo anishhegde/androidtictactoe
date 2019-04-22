@@ -2,4 +2,7 @@
     <string name="app_name">Tic Tac Toe</string>
     <string name="default_title">O\'s Turn</string>
     <string name="restart">Restart</string>
+    <string name="game_over">Game Over</string>
+    <string name="turn_string">\'s Turn\</string>
+    <string name="end">end</string>
 </resources>

@@ -3,6 +3,7 @@ package com.tictactoe.multiplayer.game;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import static com.tictactoe.multiplayer.game.GameManager.BLOCK_LENGTH;
@@ -16,17 +17,19 @@ public class GameActivity extends BaseGameActivity implements GameManager.GameLi
 
     GameManager gameManager;
     Button restartButton;
+    TextView topTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        initViews();
         initGameManager();
         initGameBlocks();
-        initViews();
     }
 
     private void initViews() {
+        topTextView = findViewById(R.id.tv_top_title);
         restartButton = findViewById(R.id.btn_restart);
         restartButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,11 +70,20 @@ public class GameActivity extends BaseGameActivity implements GameManager.GameLi
 
     @Override
     public void onAllBlocksPlayed() {
-        Toast.makeText(this, "end", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getString(R.string.end), Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onGameEvent(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onTurnChange(String turn) {
+        if(turn.equalsIgnoreCase(gameManager.GAME_OVER)) {
+            topTextView.setText(getString(R.string.game_over));
+        } else {
+            topTextView.setText(turn + getString(R.string.turn_string));
+        }
     }
 }
