@@ -1,105 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="7"
+    android:weightSum="@integer/main_layout_weights"
     tools:context=".GameActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_weight="@integer/top_text_weight"
         android:gravity="center"
-        android:text="O's Turn" />
+        android:text="@string/default_title" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="5"
+        android:layout_weight="@integer/game_layout_weight"
         android:orientation="vertical"
-        android:weightSum="3">
+        android:weightSum="@integer/game_layout_weight_sum">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="@dimen/row_height"
+            android:layout_weight="@integer/game_row_weight"
             android:orientation="horizontal"
-            android:weightSum="3">
+            android:weightSum="@integer/game_layout_weight_sum">
 
             <Button
                 android:id="@+id/block_00"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/block_width"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="@integer/block_layout_weight" />
 
             <Button
                 android:id="@+id/block_01"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/block_width"
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
 
             <Button
                 android:id="@+id/block_02"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/block_width"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="@integer/block_layout_weight" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="@dimen/row_height"
+            android:layout_weight="@integer/game_row_weight"
             android:orientation="horizontal"
-            android:weightSum="3">
+            android:weightSum="@integer/game_layout_weight_sum">
 
             <Button
                 android:id="@+id/block_10"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/block_width"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="@integer/block_layout_weight" />
 
             <Button
                 android:id="@+id/block_11"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/block_width"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="@integer/block_layout_weight" />
 
             <Button
                 android:id="@+id/block_12"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/block_width"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="@integer/block_layout_weight" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="@dimen/row_height"
+            android:layout_weight="@integer/game_row_weight"
             android:orientation="horizontal"
-            android:weightSum="3">
+            android:weightSum="@integer/game_layout_weight_sum">
 
             <Button
                 android:id="@+id/block_20"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/block_width"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="@integer/block_layout_weight" />
 
             <Button
                 android:id="@+id/block_21"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/block_width"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="@integer/block_layout_weight" />
 
             <Button
                 android:id="@+id/block_22"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/block_width"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="@integer/block_layout_weight" />
 
         </LinearLayout>
 
@@ -109,5 +108,5 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_weight="@integer/bottom_text_layout_weight" />
 </LinearLayout>
