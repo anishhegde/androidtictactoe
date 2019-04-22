@@ -33,6 +33,11 @@ public class StateManager {
         }
     }
 
+    public void play() {
+        state = State.PLAY;
+        stateValue = O_VALUE;
+    }
+
     public void end() {
         state = State.END;
         stateValue = O_VALUE;

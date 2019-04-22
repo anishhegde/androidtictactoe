@@ -105,8 +105,10 @@
 
     </LinearLayout>
 
-    <TextView
+    <Button
+        android:id="@+id/btn_restart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@string/restart"
         android:layout_weight="@integer/bottom_text_layout_weight" />
 </LinearLayout>

@@ -15,6 +15,7 @@ public class GameActivity extends BaseGameActivity implements GameManager.GameLi
             "block_20", "block_21", "block_22"};
 
     GameManager gameManager;
+    Button restartButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,18 @@ public class GameActivity extends BaseGameActivity implements GameManager.GameLi
         setContentView(R.layout.activity_game);
         initGameManager();
         initGameBlocks();
+        initViews();
+    }
+
+    private void initViews() {
+        restartButton = findViewById(R.id.btn_restart);
+        restartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                resetGameBlocks();
+                gameManager.restart();
+            }
+        });
     }
 
     private void initGameManager() {
@@ -41,6 +54,14 @@ public class GameActivity extends BaseGameActivity implements GameManager.GameLi
             int id = getIntIdFromString(buttonIds[i]);
             final Button blockButton = findViewById(id);
             blockButton.setOnClickListener(blockClickListener);
+        }
+    }
+
+    private void resetGameBlocks() {
+        for (int i = 0; i < BLOCK_LENGTH; i++) {
+            int id = getIntIdFromString(buttonIds[i]);
+            final Button blockButton = findViewById(id);
+            blockButton.setText("");
         }
     }
 

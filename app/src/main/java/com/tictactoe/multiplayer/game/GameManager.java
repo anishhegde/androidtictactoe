@@ -149,6 +149,12 @@ public class GameManager {
         return isDiagonal;
     }
 
+    public void restart() {
+        blockCounter = 0;
+        initGameBoard();
+        stateManager.play();
+    }
+
     private void setGameBoard(String value, int row, int column) {
         gameBoard[row][column] = getGameBoardValues(value);
 
