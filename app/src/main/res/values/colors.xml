@@ -11,4 +11,5 @@
     <color name="splash_end">#080709</color>
     <color name="dialog_color">#eee</color>
     <color name="white">#FFFFFF</color>
+    <color name="hotpink_pressed">#f752d0</color>
 </resources>
