@@ -65,7 +65,7 @@ A simple tic tac toe game written in plain vanilla Java.
 - Tests
 
 
-Demo Day
+Demo Day is fun
 
 edit
 
