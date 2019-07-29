@@ -65,7 +65,6 @@ A simple tic tac toe game written in plain vanilla Java.
 - Tests
 
 
-Demo Day is fun
-
-edit
+pr-dragon demo
+by dracary-scrum
 
