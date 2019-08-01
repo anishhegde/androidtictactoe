@@ -64,5 +64,3 @@ A simple tic tac toe game written in plain vanilla Java.
 - Store state 
 - Tests
 
-###Notes
-Restart the game if something happen
